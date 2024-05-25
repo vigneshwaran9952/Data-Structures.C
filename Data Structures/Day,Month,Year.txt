@@ -1,0 +1,42 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int day , month , year;
+
+    printf("Enter the day:");
+    scanf("%d",&day);
+    printf("Enter the month:");
+    scanf("%d",&month);
+    printf("Enter the year:");
+    scanf("%d",&year);
+    int rest =day +((13*(month-2)-1)/5)+(year/400)+((year/400)/4)+((2024/100)/4)-2*(2024/100);
+    int res = day + ((13*3-1)/5) + 24 + (24/4) + (20/4) - 2*20;
+    
+    res=res%7;
+    switch(res){
+        case 0:
+        printf("Sunday");
+        break;
+        case 1:
+        printf("Monday");
+        break;
+        case 2:
+        printf("Tursday");
+        break;
+        case 3:
+        printf("Wednesday");
+        break;
+        case 4:
+        printf("Thursday");
+        break;
+        case 5:
+        printf("Friday");
+        break;
+        case 6:
+        printf("Saturday");
+        break;
+        
+    }
+    return 0;
+}

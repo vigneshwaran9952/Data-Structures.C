@@ -1,0 +1,50 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+int init = 50000, tran_amt = 0;
+
+void next(){
+    count++;
+    
+}
+void nonext(){
+    printf("Not Success");
+}
+
+void ok(){
+    int amt;
+    printf("OTP confirmed\nCurrent Bank Balance : %d\n",init-tran_amt);
+    printf("Enter amount : ");
+    scanf("%d",&amt);
+    (amt<init)?next():nonext();
+    
+}
+
+void notok(){
+    printf("incorrect OTP");
+}
+
+void enter(){
+    int otp;
+    printf("OTP : 2345\nEnter OTP : ");
+    scanf("%d",&otp);
+    (otp==2345)?ok():notok();
+}
+void notenter(){
+    printf("Not Success\n");
+    exit(0);
+}
+
+int main() {
+    int tran = 3, pass = 1234, userpass;
+    char user[50];
+    // while(1){
+        printf("Enter username : ");
+        scanf("%s",user);
+        printf("Enter Password : ");
+        scanf("%d",&userpass);
+        (userpass==pass)?enter():notenter();
+    // }
+    
+    return 0;
+}
